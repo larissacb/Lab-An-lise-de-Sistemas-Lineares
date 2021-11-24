@@ -22,15 +22,14 @@ fprintf("Desvio Padrão: %.4f\n", desvioPadrao);
 fprintf("Variância: %.4f\n", variancia);
 
 figure(1)
-subplot(2,2,1);
-h = histogram(y, 'linewidth', 1.0, 'facecolor', 'r'), grid;
+subplot(1,2,1);
+[N Y] = hist(y);
 title("Histograma");
 
-subplot(2,2,2);
-barh(h.Values, 'linewidth', 1.0, 'facecolor', 'b'), grid;
+barh(Y,N, 'linewidth', 1.0, 'facecolor', 'k'), grid;
 title("Histograma");
 
-subplot(2,2,[3,4]);
+subplot(1,2,2);
 plot(y,'k'),grid;
 title("Sinal y");
 
@@ -49,8 +48,9 @@ title("Sinal Senoidal");
 ylabel("Amplitude");
 xlabel("\omega [rad/s]");
 
-fprintf("Variância do sinal senoidal %.4f\n", var(y));
-fprintf("A variância do sinal é igual ao valor eficaz da senóide\n");
+fprintf("Desvio padrão do sinal senoidal %.4f\n", std(y));
+fprintf("Valor eficaz do sinal senoidal %.4f\n", rms(y));
+fprintf("O desvio padrão do sinal é igual ao valor eficaz da senóide\n");
 
 %%
 %Questao 3

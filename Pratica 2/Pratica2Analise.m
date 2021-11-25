@@ -24,7 +24,6 @@ fprintf("Variância: %.4f\n", variancia);
 figure(1)
 subplot(1,2,1);
 [N Y] = hist(y);
-title("Histograma");
 
 barh(Y,N, 'linewidth', 1.0, 'facecolor', 'k'), grid;
 title("Histograma");

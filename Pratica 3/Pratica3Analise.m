@@ -8,7 +8,7 @@ clear all;
 close all;
 
 syms x; %Variavel simbolica
-p = [(x-1)*(x+3)^3, (x-1)*(x+3)^3, (x^3+4*x), (x-3*i)*(x+3*i)*(x+2), 800*x^3+1600*x^2+x+1, x^3+9*x^2+23*x+1, (x+1)*(x+sqrt(3*i))*(x-sqrt(3*i))]; %Vetor onde estao todos os polinomios do exercicio
+p = [(x-1)*(x+3)^3, (x^3+4*x), (x-3*i)*(x+3*i)*(x+2), 800*x^3+1600*x^2+x+1, x^3+9*x^2+23*x+1, (x+1)*(x+sqrt(3*i))*(x-sqrt(3*i))]; %Vetor onde estao todos os polinomios do exercicio
 figure(1)
 for i=1:length(p)
     expandido = expand(p(i)); %Expandir os polinomios
@@ -20,9 +20,6 @@ end
 title("Questão 1");
 ylabel("Imag");
 xlabel("Real");
-%escrever polinomios na legenda
-%legend("\mu=0.4; \sigma=1", "\mu=1.2; \sigma=1", "\mu=1.8; \sigma=1");
-
 %%
 %Questao 2
 clc;
@@ -43,12 +40,8 @@ end
 title("Questão 2");
 ylabel("Imag");
 xlabel("Real");
-%escrever polinomios na legenda
-%legend("\mu=0.4; \sigma=1", "\mu=1.2; \sigma=1", "\mu=1.8; \sigma=1");
-
 %%
 %Questao 3
-%NÃO TENHO CERTEZA
 clc
 clear all
 close all
@@ -58,7 +51,6 @@ p = [(1 + 4*z)*(1+4*z+8*z^2),(1-2*k)*(1+2*k),(s+3)/(s*(s+2)*(s+0.7)^2)]; %Vetor 
 for i=1:length(p)
    pretty(expand(p(i)))
 end
-
 %%
 %Questao 4
 clc

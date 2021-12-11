@@ -60,15 +60,20 @@ A.*B
 
 %%
 %Questao 2
-
+clc
+clear all
+close all
 %Definicao das variaveis
 A = [4,3,2; -6,0,8; 0,-4,-12];
 B = [5;8;0];
 
 A\B
-
 %%
 %Questao 3
+clc
+clear all
+close all
+
 x1 = 0:0.2:40;
 x2 = 0:0.01:40;
 y1 = exp(-0.2.*x1).*sin(5.*x1);
@@ -76,13 +81,16 @@ y2 = exp(-0.2.*x2).*sin(5.*x2);
 
 figure(1)
 subplot(2, 1, 1);
-plot(x1, y1, 'm');
+plot(x1, y1, 'm*');
 subplot(2, 1, 2);
-plot(x2, y2, 'b');
-suptitle('Quest„o 3');
-
+plot(x2, y2, 'b*');
+suptitle('Quest√£o 3');
 %%
 %Questao 4
+clc
+clear all
+close all
+
 m = {1,2,3,4,5,6; 
     'a','b','c','d','e','f';
     0.5,0.4,5.7,22.2,17.3,2.1;
@@ -95,6 +103,3 @@ for i=1:size(m,2)
    soma = soma + m{5,i};
 end
 disp(soma);
-
-
-

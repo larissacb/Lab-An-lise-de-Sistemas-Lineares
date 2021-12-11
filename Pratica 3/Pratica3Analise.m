@@ -60,19 +60,19 @@ syms s
 c = [1.5, 0.15; 1.5, 0.6; 1, 0.6]; %Matriz de condicoes
 
 figure(3)
-
+hold on
 for i=1:size(c,1) %Percorre as linhas da matriz de condicoes
     g = c(i,1)^2/(s^2+2*c(i,1)*c(i,2)*s + (c(i,1)^2)); %Funcao de transferencia
     [n,d] = numden(g); %Separando numerador e denominador
     r = roots(sym2poly(d));
-    plot(real(r),imag(r), '*', 'LineWidth', 3.0), sgrid; %Plotar grafico
-    hold on
+    plot(real(r),imag(r), '*', 'LineWidth', 3.0); %Plotar grafico
+    
 end
-
+hold off
 suptitle("Questão 4");
-%legenda nao esta funcionando
-legend("\omega=1.5; \zeta=0.15", "\omega=1.5; \zeta=0.6", "\omega=1.0; \zeta=0.6");
-title("Polos de G(s)")
+legend("\omega=1.5; \zeta=0.15", "\omega=1.5; \zeta=0.6", "\omega=1.0; \zeta=0.6", 'Autoupdate', 'off');
+sgrid;
+title("Polos de G(s)");
 ylabel("Imag");
 xlabel("Real");
 %%
